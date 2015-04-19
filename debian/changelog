@@ -1,0 +1,249 @@
+xfce4-netload-plugin (1.2.4-1+trios1) mia; urgency=medium
+
+  * New upstream release.
+  * TRIOS Build.
+  * Bump standards version to 3.9.6.
+  * debian/rules:
+    - dh_autoinstall: fix removal command for *.la files.
+
+ -- Filip Danilovic <filip@openmailbox.org>  Mon, 20 Apr 2015 00:58:27 +0200
+
+xfce4-netload-plugin (1.2.0-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/patches
+    - delete 02_drop_ppp_headers, included upstream.
+  * debian/control:
+    - update debhelper build-dep to 9.
+    - update standards version to 3.9.4.
+    - update xfce build-deps for 4.10.
+    - drop dpkg-dev build-dep, not needed anymore since even stable has
+      hardening support.
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Sat, 25 May 2013 16:34:42 +0200
+
+xfce4-netload-plugin (1.1.0-1) unstable; urgency=low
+
+  * New upstream release.
+    - makes it possible to select bits or bytes as unit.        closes: #652892
+  * debian/rules:
+    - use debhelper 9 and dpkg-dev 1.16.1 hardening support
+  * debian/control:
+    - drop hardening-includes build-dep.
+    - update debhelper build-dep for hardening support.
+    - add dpkg-dev build-dep for hardening support.
+    - replace libxfcegui4 build-dep by libxfce4ui one.
+  * debian/compat bumped to 9.
+  * debian/patches
+    - 01_fix-snprintf-format dropped, included upstream.
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Sat, 14 Jan 2012 13:38:21 +0100
+
+xfce4-netload-plugin (1.0.0-3) unstable; urgency=low
+
+  * debian/patches:
+    - 02_drop_ppp_headers added, fix FTBFS on kFreeBSD, thanks Guillem Jover.
+                                                                closes: #621820
+  * debian/rules:
+    - switch to dh tiny rules.
+  * debian/control:
+    - drop build-dep on cdbs.
+    - add build-dep on debhelper >= 7.0.50~ for overrides.
+  * debian/docs added.
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Sun, 31 Jul 2011 17:38:59 +0200
+
+xfce4-netload-plugin (1.0.0-2) unstable; urgency=low
+
+  [ Lionel Le Folgoc ]
+  * Upload to unstable.
+  * debian/control:
+    - add myself to Uploaders.
+    - remove Simon and Emanuele from uploaders, thanks to them.
+
+  [ Yves-Alexis Perez ]
+  * debian/control:
+    - update standards version to 3.9.2.
+
+ -- Lionel Le Folgoc <mrpouit@gmail.com>  Tue, 19 Apr 2011 23:12:43 +0200
+
+xfce4-netload-plugin (1.0.0-1) experimental; urgency=low
+
+  * New upstream release.
+  * debian/control:
+    - add explicit build-dep on libxfcegui4-dev now that xfce4-panel-dev
+      doesn't provide it anymore.
+    - update build-deps for Xfce 4.8.
+    - update standards version to 3.9.1.
+  * debian/patches:
+    - 01_fix-ftbfs-kfreebsd dropped, included upstream.
+    - 02_fix-tooltips-gtk2.16 as well.
+    - 01_fix-snprintf-format added, fix snprintf() call.
+  * debian/rules:
+    - pick {C,LD}FLAGS from dpkg-buildflags.
+    - add -O1, -z,defs, --as-needed to LDFLAGS.
+    - add hardening flags to {C,LD}FLAGS.
+  * Switch to 3.0 (quilt) source format.
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Sun, 27 Feb 2011 19:28:34 +0100
+
+xfce4-netload-plugin (0.4.0-4) unstable; urgency=low
+
+  * debian/patches:
+    - 01_fix-ftbfs-kfreebsd refreshed, fix FTBFS on kFreeBSD.   closes: #564651
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Mon, 11 Jan 2010 23:36:48 +0100
+
+xfce4-netload-plugin (0.4.0-3) unstable; urgency=low
+
+  [ Yves-Alexis Perez ]
+  * debian/control:
+    - switch to xfce section.
+    - bump standards version to 3.8.3.
+  * debian/watch edited to track Xfce archive reorganisation.
+  * debian/rules:
+    - drop useless removal of config.status, fix ftbfs.         closes: #564344
+
+  [ Evgeni Golov ]
+  * Fix Vcs-* fields, they were missing 'trunk' in the path.
+
+  [ Yves-Alexis Perez ]
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Sat, 09 Jan 2010 15:40:25 +0100
+
+xfce4-netload-plugin (0.4.0-2) unstable; urgency=low
+
+  * debian/patches:
+    - 02_fix-tooltips-gtk2.16 added, fix tooltips not appearing on gtk 2.16.
+  * debian/control:
+    - update standards version to 3.8.1.
+    - update build-deps to Xfce 4.6 and debhelper one to 7.
+  * debian/compat bumped to 7.
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Mon, 25 May 2009 23:19:55 +0200
+
+xfce4-netload-plugin (0.4.0-1) unstable; urgency=low
+
+  [ Simon Huggins ]
+  * debian/control: Move fake Homepage field to a real one now dpkg
+    supports it.
+  * Add Vcs-* headers to debian/control
+
+  [ Yves-Alexis Perez ]
+  * Fake new upstream release to follow package renaming.
+  * debian/control:
+    - update my email address.
+    - remove Rudy and Martin from Uploaders. Thanks to them!
+    - update standards version to 3.8.0.
+    - add dep on ${misc:Depends}. 
+  * debian/copyright: update dates, and license information.
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Sun, 01 Mar 2009 11:39:32 +0100
+
+xfce4-netload-plugin (0.4-3) unstable; urgency=low
+
+  (Stefan Ott)
+  * debian/control: updated the url
+
+  (Yves-Alexis Perez)
+  * debian/control:
+   - removed Jani from uploaders as he's not anymore in the team.
+   - removed gtk from build-dep as it's pulled by xfce4-panel-dev anyway.
+  * debian/patches:
+  	- 01_fix-ftbfs-kfreebsd added, thanks Cyril Brulebois.		closes: #415662
+
+  (Simon Huggins)
+  * Build against latest and greatest xfce.
+
+ -- Yves-Alexis Perez <corsac@corsac.net>  Thu, 19 Apr 2007 18:06:24 +0100
+
+xfce4-netload-plugin (0.4-2) unstable; urgency=low
+
+  * Updated build-deps to 4.3.90.2 (Xfce 4.4 Beta2).
+  * Updated standards version to 3.7.2.
+
+ -- Yves-Alexis Perez <corsac@corsac.net>  Wed, 26 Jul 2006 17:48:23 +0100
+
+xfce4-netload-plugin (0.4-1) unstable; urgency=low
+
+  * New upstream release
+  * Removed explicit dependency on xfce4-panel (managed by shlibs)
+
+ -- Yves-Alexis Perez <corsac@corsac.net>  Wed, 03 May 2006 19:17:15 +0100
+
+xfce4-netload-plugin (0.3.3-1) unstable; urgency=low
+
+  [ Jani Monoses ]
+  * Set Standard policy version to 3.6.2
+
+  [ Rudy Godoy ]
+  * New upstream release
+  * Removed dependency and autotools bootstraping since
+    upstream is using an up to date version
+  * Added patch and rebootstrapped automake files to remove libgtop definition
+    on Makefile.am which should not be used anymore according changelog. 
+    This should fix FTBFS on mips. 
+    (Temporary solution, already forwarded upstream). (Closes: #355840)
+
+ -- Rudy Godoy <rudy@kernel-panik.org>  Sat, 25 Mar 2006 11:17:09 +0000
+
+xfce4-netload-plugin (0.3.2-2) unstable; urgency=high
+
+  * Binary skew blocks testing progression hence urgency high
+  * Add build-depends on >= 4.2.2 (though this won't matter now the
+    autobuilders have actually all installed it but hey)
+
+ -- Simon Huggins <huggie@earth.li>  Thu, 14 Jul 2005 09:38:05 +0100
+
+xfce4-netload-plugin (0.3.2-1) unstable; urgency=low
+
+  * New upstream release
+  * Moving to unstable
+
+ -- Emanuele Rocca <ema@debian.org>  Sat, 18 Jun 2005 17:51:30 +0200
+
+xfce4-netload-plugin (0.3.1-1) experimental; urgency=low
+  
+  * New upstream release
+ 
+ -- Emanuele Rocca <ema@debian.org>  Tue, 29 Mar 2005 21:12:43 +0200
+ 
+xfce4-netload-plugin (0.2.4-1) unstable; urgency=low
+
+  * (Simon Huggins)
+   - Package adopted by the Debian Xfce Maintainers (closes: #245121)
+   - New Upstream Release
+   - Put the cdbs autotool update magic in place and the appropriate
+     build-depends
+   - Change the case on Xfce appropriately
+   - Work around some evil cdbs/autotools defaults which cause the automagic
+     autotool updates not to work. Grmbl
+  * (Rudy Godoy)
+   - Fixed capitalisation on description
+
+ -- Rudy Godoy <rudy@kernel-panik.org>  Tue,  1 Feb 2005 00:49:52 -0500
+
+xfce4-netload-plugin (0.2.2-4) unstable; urgency=low
+
+  * Uploading with maintainer set to QA group
+  * Updated libtool (closes: #239470)
+
+ -- Andrew Pollock <apollock@debian.org>  Sun, 25 Apr 2004 11:13:24 +1000
+
+xfce4-netload-plugin (0.2.2-3) unstable; urgency=low
+
+  * Remove bashism from debian/rules
+
+ -- Andrew Lau <netsnipe@users.sourceforge.net>  Sat,  8 Nov 2003 14:36:52 +1100
+
+xfce4-netload-plugin (0.2.2-2) unstable; urgency=low
+
+  * Remove libtool library and object.
+
+ -- Andrew Lau <netsnipe@users.sourceforge.net>  Fri,  7 Nov 2003 16:16:36 +1100
+
+xfce4-netload-plugin (0.2.2-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Andrew Lau <netsnipe@users.sourceforge.net>  Wed, 29 Oct 2003 21:51:30 +1100

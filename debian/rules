@@ -1,0 +1,10 @@
+#!/usr/bin/make -f
+export DEB_LDFLAGS_MAINT_APPEND=-Wl,-z,defs -Wl,--as-needed -Wl,-O1
+export DEB_BUILD_MAINT_OPTIONS=hardening=+pie,+bindnow
+
+override_dh_auto_install:
+	dh_auto_install
+	find debian/xfce4-netload-plugin -name '*.la' -delete
+
+%:
+	dh $@

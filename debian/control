@@ -1,0 +1,17 @@
+Source: xfce4-netload-plugin
+Section: xfce
+Priority: optional
+Maintainer: Filip Danilovic <filip@openmailbox.org>
+Build-Depends: debhelper (>= 9), xfce4-panel-dev (>= 4.10.0), libxml2-dev,
+ libxml-parser-perl, libxfce4ui-1-dev (>= 4.10.0), intltool
+Standards-Version: 3.9.6
+Homepage: http://goodies.xfce.org/
+Vcs-Svn: svn://svn.debian.org/pkg-xfce/goodies/trunk/xfce4-netload-plugin/
+Vcs-Browser: http://svn.debian.org/wsvn/pkg-xfce/goodies/trunk/xfce4-netload-plugin/
+
+Package: xfce4-netload-plugin
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: network load monitor plugin for the Xfce4 panel
+ This plugin displays the current load of the network interfaces of your choice
+ in the panel.
